@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Global from "../../globalstyles/style"
+import Button from '../../components/button'
 
 export default function Splash() {
 const navigation = useNavigation()
@@ -14,7 +15,7 @@ const navigation = useNavigation()
 
         {/* view containing button */}
         <View style={styles.button1}>
-        <Button title='Get Started' color='#FF7E00' onPress={()=> navigation.navigate('RegisterScreen')}></Button>
+        <Button title='Get Started' onPress={()=> navigation.navigate('RegisterScreen')}/>
         </View>
 
 
@@ -26,5 +27,6 @@ const styles = StyleSheet.create({
  
   button1:{
    margin: 30,
+   width:200
   }
 });

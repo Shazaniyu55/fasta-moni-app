@@ -11,21 +11,27 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
-
 import {Ionicons} from 'react-native-vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
 
 
 const CustomDrawer = props => {
-  const navigation = useNavigation()
+  const [userDetails, setUserDetails] = React.useState();
+  React.useEffect(() => {
+    getUserData();
+  }, []);
 
+  const getUserData = async () => {
+    const userData = await AsyncStorage.getItem('userData');
+    if (userData) {
+      setUserDetails(JSON.parse(userData));
+    }
+  };
 
-  const handleSignOut = () => {
-    
-  }
+  
 
   return (
     <View style={{flex: 1}}>
@@ -48,7 +54,7 @@ const CustomDrawer = props => {
               fontSize: 18,
               marginBottom: 5,
             }}>
-            Email: shazaniyu@gmail.com
+            Email: {userDetails?.email}
           </Text>
           <View style={{flexDirection: 'row'}}>
             <Text
@@ -81,11 +87,7 @@ const CustomDrawer = props => {
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {}} style={{paddingVertical: 15}}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            {/* <Ionicons name="exit-outline" size={22} /> */}
-    
-              <Button title='Log Out' color='#FF7E00' onPress={handleSignOut}></Button>
-          </View>
+         
         </TouchableOpacity>
       </View>
     </View>

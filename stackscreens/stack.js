@@ -15,7 +15,7 @@ export default function MyStack() {
     <stack.Screen name='Splash' component={Splash} options={{headerShown:false}}/>
       <stack.Screen name='RegisterScreen' component={RegistrationScreen} options={{headerShown:false}}/>
       <stack.Screen name='LoginScreen' component={LoginScreen} options={{headerShown:false}}/>
-      <stack.Screen name='HomeScreen' component={HomeScreen} options={{headerShown:false}}/>
+      <stack.Screen name='HomeScreen' component={SideTab} options={{headerShown:false}}/>
 
 
     </stack.Navigator>

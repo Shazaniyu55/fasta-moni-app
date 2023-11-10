@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import React from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
 import Button from '../../components/button';
+
 const HomeScreen = ({navigation}) => {
   const [userDetails, setUserDetails] = React.useState();
   React.useEffect(() => {
@@ -35,6 +36,8 @@ const HomeScreen = ({navigation}) => {
         Welcome {userDetails?.fullname}
       </Text>
       <Button title="Logout" onPress={logout} />
+
+      
     </View>
   );
 };
