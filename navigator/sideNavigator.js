@@ -2,12 +2,16 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { FontAwesome5 } from "@expo/vector-icons";
 import CustomDrawer from "../components/customdrawer/customdrawer";
 import Bottomtab from "./bottomNavigator";
-import { Edit } from "../screens/edit/edit";
+
+
 
 const Drawer = createDrawerNavigator();
 
 
+
 function SideTab(){
+
+    
     return(
         <Drawer.Navigator 
         drawerContent={props => <CustomDrawer {...props} />}
@@ -37,18 +41,7 @@ function SideTab(){
             }}
             />
 
-        <Drawer.Screen 
-            
-            name="Edit"
-            component={Edit} 
-            options={{
-                drawerIcon: ({color}) => (
-                    <FontAwesome5 name="pen" size={22} color={color} />
-                  ),
-                
-                  
-            }}
-            />
+       
 
             
             </Drawer.Navigator>
